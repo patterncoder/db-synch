@@ -1,0 +1,3 @@
+[submodule "NinjaSchemas"]
+	path = NinjaSchemas
+	url = https://github.com/Robertson74/NinjaSchemas.git
