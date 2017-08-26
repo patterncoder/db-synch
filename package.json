@@ -1,0 +1,23 @@
+{
+  "name": "db-synch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node build/src/main.js"
+  },
+  "author": "Chris Baily",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.64",
+    "@types/mssql": "^4.0.1",
+    "bookshelf": "^0.10.3",
+    "bookshelf-page": "^0.3.2",
+    "knex": "^0.12.7",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.8.4",
+    "mssql": "^3.3.0",
+    "promise-mysql": "^3.0.1"
+  }
+}
