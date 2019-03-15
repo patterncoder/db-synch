@@ -2,9 +2,10 @@
 
 // "select top 25 CustomerID, CFirstName, CLastName from tblCustomers where CustomerID = 294"
 
+let mCustomer = require("../config/models")["Customer"];
 const Customer = {
-    sql: "select top 25 CustomerID, CFirstName, CLastName from tblCustomers",
-    array: true,
+    model: mCustomer, 
+    sql: "select CustomerID, CFirstName, CLastName from tblCustomers where CustomerID = 1000",
     mapping: {
         firstName: {
             column: "CFirstName", normalizers: ["fixNull('firstName')"]
@@ -14,6 +15,14 @@ const Customer = {
         },
         otdId: {
             column: "CustomerID", normalizers: [] 
+        },
+        otdBids: {
+            sql: `select BidID from tblBids where CustomerID = {CustomerID}`,
+            mapping: {
+                otdId: {
+                    column: "BidID", normalizers: [] 
+                }
+            }
         },
         emails: {
             sql: `select CustomerID, CEmail, 'personal' as emailType from tblCustomers where
@@ -33,7 +42,6 @@ const Customer = {
                     and CState <> ''
                     and CZip <> ''
                     and CustomerID = {CustomerID}`,
-            array: true,
             mapping: {
                 address1: {column: "address", normalizers: []},
                 city: {column: "city", normalizers: []},
@@ -53,7 +61,6 @@ const Customer = {
                     from tblCustomers 
                     where CPhoneW <> ''
                     and CustomerID = {CustomerID};`,
-            array: true,
             mapping: {
                 contactType: {column: "contactType", normalizers: []},
                 primary: { normalizers: ["returnTrue"] },

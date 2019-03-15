@@ -9,3 +9,5 @@ module.exports = {
         db: 'mongodb://patterncoder:lemein1969@104.131.151.131/ninjaAPI'
     }
 }
+
+// db.createUser({user: "patterncoder",pwd: "lemein1969",roles: [ "readWrite", "dbAdmin" ]});

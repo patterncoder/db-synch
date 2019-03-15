@@ -2,9 +2,9 @@
 
 // "select top 25 CustomerID, CFirstName, CLastName from tblCustomers where CustomerID = 294"
 
-let mContract = require("../config/models")["Contract"];
-const Contract = {
-    model: mContract, 
+let mCustomer = require("../config/models")["Customer"];
+const CustomerContracts = {
+    model: mCustomer, 
     sql: "select BidID, CustomerID, BidEventName, BidEventDate from tblBids where CustomerID = 1000",
     mapping: {
         otdId: {
@@ -24,4 +24,4 @@ const Contract = {
     }
 }
 
-export { Contract };
+export { CustomerContracts };

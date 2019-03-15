@@ -14,7 +14,7 @@ let mutators = {
         return value[0] === value[0].toUpperCase() ? value : toTitleCase(value);
     },
     fixNull: function(value, replacement) {
-        if(!value || /^$|\s+/.test(value) ){
+        if(!value || /^\s*$/.test(value) ){
             return replacement;
         } else {
             return value;
